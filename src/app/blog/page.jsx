@@ -27,7 +27,7 @@ export default async function Blog() {
                 Nothing yet
               </h2>
               <p className="pb-4 mt-4 text-base text-zinc-600 dark:text-zinc-400">
-                I'm working on it...
+                I&apos;m working on it...
               </p>
             </div>
           </div>

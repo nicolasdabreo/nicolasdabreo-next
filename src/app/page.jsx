@@ -73,7 +73,7 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="https://github.com/nicolasdabreo/nicolasdabreo/about/resume.md" variant="secondary" className="w-full mt-6 group">
+      <Button href="https://github.com/nicolasdabreo/nicolasdabreo/blob/main/about/resume.md" variant="secondary" className="w-full mt-6 group">
         See Full CV
         <ArrowAwayIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
