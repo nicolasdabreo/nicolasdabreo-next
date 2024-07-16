@@ -1,9 +1,3 @@
-'use client'
-
-import { useContext } from 'react'
-import { useRouter } from 'next/navigation'
-
-import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { formatDate } from '@/app/utils'
@@ -22,15 +16,12 @@ function ArrowLeftIcon(props) {
 }
 
 export function ArticleLayout({ article, children }) {
-  let router = useRouter()
-  let { previousPathname } = useContext(AppContext)
-
   return (
     <Container className="mt-8 lg:mt-16">
       <div className="xl:relative">
         <div className="max-w-2xl mx-auto">
           <a
-            href="/"
+            href="/blog"
             aria-label="Go back to articles"
             className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition lg:absolute lg:-left-5 lg:-mt-2 lg:mb-0 xl:-top-1.5 xl:left-0 xl:mt-0 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
           >

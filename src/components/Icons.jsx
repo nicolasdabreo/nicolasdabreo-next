@@ -17,7 +17,7 @@ export function InstagramIcon(props) {
 
 export function GitHubIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
