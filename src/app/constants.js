@@ -1,6 +1,6 @@
 import logoStitched from '@/images/logos/stitched.png'
 import logoSquareEnix from '@/images/logos/squareenix.png'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoMegalixir from '@/images/logos/megalixir.svg'
 
 export const PROJECTS = [
     {
@@ -37,7 +37,7 @@ export const WORK_HISTORY = [
     {
       company: 'Megalixir LTD',
       title: 'Contract Software Engineer',
-      logo: logoPlanetaria,
+      logo: logoMegalixir,
       start: '2022',
       end: {
         label: 'Present',
