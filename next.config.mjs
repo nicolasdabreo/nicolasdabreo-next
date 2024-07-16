@@ -2,7 +2,7 @@ import rehypePrism from '@mapbox/rehype-prism'
 import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
-const isProd = process.env.NODE_ENV == 'production';
+const isProd = process.env.NODE_ENV = 'production';
 
 const nextConfig = {
   basePath: isProd ? "/nicolasdabreo-next" : "",
