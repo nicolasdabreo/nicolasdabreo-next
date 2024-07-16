@@ -18,7 +18,7 @@ export default async function Blog() {
     >
       {!articles.length && (
         <Container className="flex items-center h-full py-8 sm:py-12">
-          <div className="flex flex-row items-center justify-center gap-4">
+          <div className="flex flex-row items-center justify-center gap-8">
             <div className='flex items-center justify-center w-20 h-20 p-2 pb-3 pl-3 rounded-lg bg-zinc-100 dark:bg-zinc-800'>
               <PencilIcon className="w-16 h-16" />
             </div>

@@ -5,11 +5,8 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  XIcon,
   BriefcaseIcon,
-  ArrowDownIcon,
   MailIcon,
   ArrowAwayIcon
 } from '@/components/Icons'
@@ -73,7 +70,7 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="https://github.com/nicolasdabreo/nicolasdabreo/blob/main/about/resume.md" variant="secondary" className="w-full mt-6 group">
+      <Button href="https://github.com/nicolasdabreo/nicolasdabreo/blob/main/about/resume.md" variant="secondary" className="w-full mt-6 group" target="_blank" rel="noopener noreferrer">
         See Full CV
         <ArrowAwayIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -97,12 +94,16 @@ export default async function Home() {
               <SocialLink
                 href="https://github.com/nicolasdabreo"
                 aria-label="Follow on GitHub"
-                icon={GitHubIcon}
+                icon={GitHubIcon} 
+                target="_blank" 
+                rel="noopener noreferrer"
                 />
               <SocialLink
                 href="https://www.linkedin.com/in/nicolasdabreo/"
                 aria-label="Follow on LinkedIn"
-                icon={LinkedInIcon}
+                icon={LinkedInIcon} 
+                target="_blank" 
+                rel="noopener noreferrer"
                 />
               <SocialLink
                 href="mailto:nicolas@megalixir.co.uk"
