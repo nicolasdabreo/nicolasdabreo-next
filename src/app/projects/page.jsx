@@ -27,14 +27,14 @@ export default function Projects() {
             <Card.Description className="flex-auto">{project.description}</Card.Description>
             <div className="flex-none relative z-10 flex mt-6 text-sm font-medium flex-row transition text-zinc-400 dark:text-zinc-200 gap-3">
               {project.link.github &&  (
-                <Link href={project.link.github} className="text-zinc-800 dark:text-white hover:text-violet-500">
+                <Link rel="noopener noreferrer" target="_blank" href={project.link.github} className="text-zinc-800 dark:text-white hover:text-violet-500">
                 <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <GitHubIcon className="w-8 h-8" />
                 </div>
                 </Link>
               )}
               {project.link.application && (
-                <Link href={project.link.application} className="text-zinc-800 dark:text-white hover:text-violet-500">
+                <Link rel="noopener noreferrer" target="_blank" href={project.link.application} className="text-zinc-800 dark:text-white hover:text-violet-500">
                 <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <LinkIcon className="flex-none w-8 h-8" />
                 </div>
