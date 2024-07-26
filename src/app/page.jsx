@@ -81,7 +81,7 @@ function Resume() {
 export default async function Home() {
   return (
     <>
-      <Container>
+      <Container className="flex items-center h-full">
         <div className="grid max-w-2xl grid-cols-1 mx-auto lg:grid-cols-2 gap-y-20 lg:max-w-none">
           <div className="flex flex-col justify-center">
             <h1 className="text-6xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">

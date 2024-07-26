@@ -7,29 +7,25 @@ export const PROJECTS = [
       name: 'CardCommerce',
       description:
         'Inventory management software purpose built for Trading Card powersellers and game stores. Designed to sync all commited changes across marketplaces concurrently.',
-      link: { label: 'WIP' },
-      type: "application"
+      link: {},
     },
     {
       name: 'LGS Leagues',
       description:
         'A shared nothing SAAS style project built for Local Game Stores to manage their competitive tournament Leagues. Initially built in Golang, rewritten in LiveView.',
-      link: { href: 'http://lgsl.fly.dev', label: 'lgsl.fly.dev' },
-      type: "application"
+      link: { application: 'https://lgsl.fly.dev' },
     },
     {
       name: 'Concurrent Word Processor',
       description:
         'A multi-channel shared concurrent word processor using only built in BEAM tooling and concurrency best practices.',
-      link: { href: 'https://github.com/nicolasdabreo/ex_word_processor', label: 'github.com' },
-      type: "github"
+      link: { application: 'https://word.dabreo.dev', github: 'https://github.com/nicolasdabreo/word_processor' },
     },
     {
       name: 'Prototype Inventory Management',
       description:
         'A LiveView MRP software that I used for prototyping new tools and approaches that I wanted to test out. This later became the basis for CardCommerce.',
-      link: { href: 'https://github.com/nicolasdabreo/inventory_liveview', label: 'github.com' },
-      type: "github"
+      link: { application: '', github: 'https://github.com/nicolasdabreo/inventory_liveview' },
     },
   ]
 

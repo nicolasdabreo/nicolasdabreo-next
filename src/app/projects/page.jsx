@@ -1,7 +1,7 @@
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import Link from 'next/link'
 import {
-  ComputerScreenIcon,
   GitHubIcon,
 } from '@/components/Icons'
 import { PROJECTS } from '../constants'
@@ -16,24 +16,38 @@ export default function Projects() {
     <SimpleLayout title="My Projects">
       <ul
         role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 divide-y divide-zinc-100 dark:divide-zinc-700/40 sm:divide-none"
       >
         {PROJECTS.map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              {project.type == "github" && <GitHubIcon className="w-8 h-8 text-zinc-800 dark:text-white" />}
-              {project.type == "application" && <ComputerScreenIcon className="w-8 h-8" />}
-            </div>
+
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              {project.link.href ? <Card.Link href={project.link.href}>{project.name}</Card.Link> : <span>{project.name}</span>}
-              
+              {project.name}
             </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-violet-500 dark:text-zinc-200">
-              <LinkIcon className="flex-none w-6 h-6" />
-              {project.link.label ?  <span className="ml-2">{project.link.label}</span> : "WIP"}
-             
-            </p>
+            <Card.Description className="flex-auto">{project.description}</Card.Description>
+            <div className="flex-none relative z-10 flex mt-6 text-sm font-medium flex-row transition text-zinc-400 dark:text-zinc-200 gap-3">
+              {project.link.github &&  (
+                <Link href={project.link.github} className="text-zinc-800 dark:text-white hover:text-violet-500">
+                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                  <GitHubIcon className="w-8 h-8" />
+                </div>
+                </Link>
+              )}
+              {project.link.application && (
+                <Link href={project.link.application} className="text-zinc-800 dark:text-white hover:text-violet-500">
+                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                  <LinkIcon className="flex-none w-8 h-8" />
+                </div>
+              </Link>
+              )}
+
+              {!project.link.application && !project.link.github && (
+                <span className='flex items-center justify-center gap-1'>
+                  <LinkIcon className="flex-none w-8 h-8" />
+                  WIP
+                </span>
+              )}
+            </div>
           </Card>
         ))}
       </ul>
