@@ -7,7 +7,8 @@ export const PROJECTS = [
       name: 'CardCommerce',
       description:
         'Inventory management software purpose built for Trading Card powersellers and game stores. Designed to sync all commited changes across marketplaces concurrently.',
-      link: {},
+      link: { label: 'WIP' },
+      type: "application"
     },
     {
       name: 'LGS Leagues',
@@ -27,7 +28,8 @@ export const PROJECTS = [
       name: 'Prototype Inventory Management',
       description:
         'A LiveView MRP software that I used for prototyping new tools and approaches that I wanted to test out. This later became the basis for CardCommerce.',
-      link: { application: '', github: 'https://github.com/nicolasdabreo/inventory_liveview' },
+      link: { href: 'https://github.com/nicolasdabreo/inventory_liveview', label: 'github.com' },
+      type: "github"
     },
   ]
 
