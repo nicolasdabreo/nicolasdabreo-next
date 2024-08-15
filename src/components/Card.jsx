@@ -19,7 +19,7 @@ export function Card({ as, className, children }) {
 
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={clsx(className, 'group relative flex flex-col items-start h-full')}
     >
       {children}
     </Component>
@@ -29,10 +29,10 @@ export function Card({ as, className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
-      <Link {...props}>
-        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
+      <div className="absolute z-0 transition scale-95 opacity-0 -inset-x-4 -inset-y-6 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
+      <Link {...props} className="h-full">
+        <span className="absolute z-20 -inset-x-4 -inset-y-6 sm:-inset-x-6 sm:rounded-2xl" />
+        <span className="relative z-10 flex flex-col h-full">{children}</span>
       </Link>
     </>
   )
@@ -50,20 +50,20 @@ Card.Title = function CardTitle({ as, href, children }) {
 
 Card.Description = function CardDescription({ className, children }) {
   return (
-    <p className={clsx(className, "relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400")}>
+    <p className="relative z-10 flex flex-auto mt-4 text-sm text-zinc-600 dark:text-zinc-400">
       {children}
     </p>
   )
 }
 
-Card.Cta = function CardCta({ children }) {
+Card.Cta = function CardCta({ children, className }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-violet-500"
+      className={clsx("relative z-10 flex items-center mt-4 text-sm font-medium text-violet-500", className)}
     >
       {children}
-      <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+      <ChevronRightIcon className="w-4 h-4 ml-1 stroke-current" />
     </div>
   )
 }

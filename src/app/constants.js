@@ -13,13 +13,15 @@ export const PROJECTS = [
       name: 'LGS Leagues',
       description:
         'A shared nothing SAAS style project built for Local Game Stores to manage their competitive tournament Leagues. Initially built in Golang, rewritten in LiveView.',
-      link: { application: 'https://lgsl.fly.dev' },
+      link: { href: 'https://lgsleagues.com', label: 'lgsleagues.com' },
+      type: "application"
     },
     {
       name: 'Concurrent Word Processor',
       description:
         'A multi-channel shared concurrent word processor using only built in BEAM tooling and concurrency best practices.',
-      link: { application: 'https://word.dabreo.dev', github: 'https://github.com/nicolasdabreo/word_processor' },
+      link: { href: 'https://word.dabreo.dev', label: 'word.dabreo.dev' },
+      type: "application"
     },
     {
       name: 'Prototype Inventory Management',

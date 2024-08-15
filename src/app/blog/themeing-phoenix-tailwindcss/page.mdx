@@ -5,7 +5,7 @@ export const article = {
   date: '2024-07-16',
   title: 'Themeing Phoenix with TailwindCSS',
   description:
-    'Looking to implement dark mode or configurable themes to your Phoenix app? Look no further.',
+    'Personally I love Tailwind, however I have long found colors in TailwindCSS to be my main footgun, so many options make consistency a big problem...',
   published: true
 }
 
@@ -16,14 +16,58 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Sorry, this is a placeholder for now, thanks for looking!
+Whenever I start a new project I live to invest a little bit of time at the beginning to establish colors and theme to reduce later pains. While I personally love Tailwind, I have long found colors in TailwindCSS to be my main footgun, so many options make consistency a big problem and with so much inconsistency it becomes extremely difficult to change on a large scale. Luckily Tailwind provides us the utilities necessary to mitigate this issue however they don't make this super obvious, plugins and presets.
 
-## Lorem
+In this article I'll go over how to use TailwindCSS, Plugins, and CSS variables in conjunction to rectify this issue. To make this Phoenix-y I'll also show you how I implemented dark mode and theme toggling to my Phoenix LiveView application using these concepts.
 
-Code example
+## CSS variables
 
-```elixir
-defmodule Example do
-  def hello(), do: :world
-end
+CSS Variables are the perfect solution to this problem, change the underlying values and you change them everywhere, however its not clear how to apply these concepts to a Tailwind configuration file and generate the classes to use alongside your utility classes. Especially as Tailwind actively suggests against generating your own CSS classes alongside your Tailwind utils.
+
+The first step we need to produce our own utility classes via the Tailwind engine is to extend our theme, here we can use any valid CSS string which means we can also make use of CSS variables.
+
+```js
+# tailwind.config.js
+import { themePlugin } from "./theme-plugin.js"
+
+module.exports = {
+    theme: {
+        extend: {
+            colors: {
+                "background": "var(--background)",
+                "foreground": "var(--foreground)",
+                "primary": {
+                    "DEFAULT": "var(--primary)",
+                    "foreground": "var(--primary-foreground)"
+                }
+            }
+        }
+    },
+    content: [...],
+    plugins: [
+	    themePlugin
+    ]
+}
+```
+
+This will make classes such as `text-foreground`, `bg-background` viable utility classes. The next step is to resolve the assigning of these variables values in the base layer of your generated CSS file. In order to make use of Tailwind's suite of tools we can use the plugin tool to inject our variables directly into the base layer using `addBase` and the colors tool to pull out the exact tailwind colors we want to assign directly to our variables. 
+
+```js
+# tailwind-plugin.js
+const plugin = require("tailwindcss/plugin")
+const colors = require('tailwindcss/colors')
+
+export const themePlugin = plugin(
+    // Add css to base layer
+    function ({ addBase }) {
+        addBase({
+            ":root": {
+                "--background": colors.zinc[50], 
+                "--foreground": colors.zinc[900],
+                "--primary": colors.indigo[600], 
+                "--primary-foreground": colors.indigo[50], 
+            }
+        })
+    }
+)
 ```
