@@ -31,6 +31,13 @@ export const PROJECTS = [
       link: { href: 'https://github.com/nicolasdabreo/inventory_liveview', label: 'github.com' },
       type: "github"
     },
+    {
+      name: 'Calling All Adventurers Website',
+      description:
+        'NextJS marketing website build for the fantasy Podcast, Calling All Adventurers.',
+      link: { href: 'https://main.d33pj7rhq0gmpk.amplifyapp.com/', label: 'thetowerarray.com' },
+      type: "application"
+    },
   ]
 
 export const WORK_HISTORY = [
