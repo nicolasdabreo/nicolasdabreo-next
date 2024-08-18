@@ -35,7 +35,13 @@ export const PROJECTS = [
       name: 'Calling All Adventurers Website',
       description:
         'NextJS marketing website build for the fantasy Podcast, Calling All Adventurers.',
-      link: { href: 'https://main.d33pj7rhq0gmpk.amplifyapp.com/', label: 'thetowerarray.com' },
+      link: { href: 'https://thetowerarray.com/', label: 'thetowerarray.com' },
+      type: "application"
+    },
+    {
+      name: 'Guild Wars 2 Fish',
+      description: 'A Guild Wars 2 achievement progress tracking application for achieving the ultimate title, Cod Swimming Amoungst Mere Minnows. Made with NextJS.',
+      link: { href: 'https://gw2.fish/', label: 'gw2.fish' },
       type: "application"
     },
   ]
